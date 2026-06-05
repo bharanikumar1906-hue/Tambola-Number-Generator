@@ -1,0 +1,17 @@
+import random
+import time
+numbers = list(range(1, 91))
+random.shuffle(numbers)
+called_numbers = []
+print(" Tambola Auto Caller Started \n")
+while numbers:
+    number = numbers.pop(0)
+    called_numbers.append(number)
+    print(f"\n Number Called: {number}")
+    print(f" Remaining: {len(numbers)}")
+    for sec in range(10, 0, -1):
+        print(f" Next number in {sec} seconds...", end="\r")
+        time.sleep(1)
+print("\n\n🎊 Game Over! All numbers generated.")
+print("Called Numbers:")
+print(sorted(called_numbers))
